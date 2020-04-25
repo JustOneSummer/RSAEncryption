@@ -1,0 +1,14 @@
+# Project exclude paths
+# maven ignore
+target/
+*.jar
+!.mvn/wrapper/*
+*.war
+*.zip
+*.tar
+*.tar.gz
+# idea ignore
+.idea/
+*.ipr
+*.iml
+*.iws
