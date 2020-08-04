@@ -38,7 +38,7 @@ public class RSACipher {
     /**
      * 默认加密方式
      */
-    private static RSAPadding rsaPadding = RSAPadding.RSA_DEFAULT;
+    private static RSAPadding rsaPadding = RSAPadding.RSA_ECB_PKCS1;
 
     /**
      * 获取加密名称

@@ -9,6 +9,8 @@ import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.security.SignatureException;
@@ -22,7 +24,7 @@ import java.util.Base64;
  * @version 2020/4/24 20:38
  */
 public class RSA {
-    public static final String CHARSETS = "UTF-8";
+    public static final Charset CHARSETS = StandardCharsets.UTF_8;
 
     /**
      * RSA参数设置
@@ -72,7 +74,7 @@ public class RSA {
     public static String sign(String data, String privateKey) {
         try {
             return RSACipher.sign(data.getBytes(CHARSETS), privateKey);
-        } catch (NoSuchAlgorithmException | InvalidKeySpecException | InvalidKeyException | SignatureException | UnsupportedEncodingException e) {
+        } catch (NoSuchAlgorithmException | InvalidKeySpecException | InvalidKeyException | SignatureException e) {
             e.printStackTrace();
         }
         return null;
@@ -89,7 +91,7 @@ public class RSA {
     public static boolean verify(String data, String publicKey, String sign) {
         try {
             return RSACipher.verify(data.getBytes(CHARSETS), publicKey, sign);
-        } catch (NoSuchAlgorithmException | InvalidKeySpecException | InvalidKeyException | SignatureException | UnsupportedEncodingException e) {
+        } catch (NoSuchAlgorithmException | InvalidKeySpecException | InvalidKeyException | SignatureException e) {
             e.printStackTrace();
         }
         return false;

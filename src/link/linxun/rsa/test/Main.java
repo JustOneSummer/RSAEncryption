@@ -5,8 +5,6 @@ import link.linxun.rsa.cipher.RSAKeyPairGenerator;
 import link.linxun.rsa.config.RSAPadding;
 import link.linxun.rsa.config.RSASignatureAlgorithm;
 
-import java.util.Base64;
-
 /**
  * @author lin-xun
  * @version 2020/4/25 20:22
@@ -17,7 +15,7 @@ public class Main {
         RSAKeyPairGenerator key = RSAUtils.getRSAKey();
         String privateKey = key.getPrivateKeyByString();
         String publicKey = key.getPublicKeyByString();
-        RSAUtils.setting(RSAPadding.RSA_DEFAULT);
+        RSAUtils.setting(RSAPadding.RSA_ECB_PKCS1);
         RSAUtils.setting(RSASignatureAlgorithm.RSA_SHA1);
         System.out.println(privateKey);
         System.out.println(publicKey);
